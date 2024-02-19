@@ -11,7 +11,7 @@ define Package/esp_ubus
 	TITLE:=esp_ubus
 	DEPENDS:= +libubus +libubox +libserialport +libblobmsg-json
 endef
-# +tuya-SDK-libs
+
 define Package/esp_ubus/description
 	This is a package that communicates with tuya cloud
 endef

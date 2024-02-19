@@ -1,8 +1,4 @@
 BIN:=esp_ubus
-# -llink_core\
-# -lmiddleware_implementation\
-# -lplatform_port\
-# -lutils_modules
 LDFLAGS:=-lubus\
 -lubox\
 -lblobmsg_json\
