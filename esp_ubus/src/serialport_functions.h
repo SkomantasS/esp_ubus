@@ -1,4 +1,8 @@
+#include <libserialport.h>
 #include <libubus.h>
+
+#define ESP_VID 0x10C4
+#define ESP_PID 0xEA60
 
 struct port_data {
     int usb_vid;
@@ -7,5 +11,7 @@ struct port_data {
 };
 
 int get_esp_devices(struct port_data *esp_data);
-void connect_to_port_and_send_data(char *port, char *data, int size_r,
-                                   char *error_info, char *response);
+int open_port_to_esp(char *port, struct sp_port **ports);
+int send_to_esp(char *data, struct sp_port **tx_port);
+int read_from_esp(char *response, int size_r, struct sp_port **rx_port);
+int close_port_to_esp(struct sp_port **ports);

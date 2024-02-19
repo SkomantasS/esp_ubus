@@ -10,8 +10,7 @@
 
 struct ubus_context *ctx;
 
-int
-main(int argc, char **argv) {
+int main(int argc, char **argv) {
     const char *ubus_socket = NULL;
     int ch;
 
@@ -32,7 +31,6 @@ main(int argc, char **argv) {
 
     ctx = ubus_connect(ubus_socket);
     if (!ctx) {
-        fprintf(stderr, "Failed to connect to ubus\n");
         return -1;
     }
 
